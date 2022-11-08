@@ -1,0 +1,708 @@
+Enter the number :
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101000 MAR = 001111101000 MBR = 0000001000000000000000001111001111101110
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000010 MAR = 000000000000 IBR = 00001111001111101110
+     Decoding The Instruction.....
+     The instruction type is LOAD –M(X) 
+
+     Transfering Negative of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 MBR = 0000000000000000000000000000000000000110 AC = 1000000000000000000000000000000000000110
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101110
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101110)
+     Condition Not Satisfied
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101001 MAR = 001111101001 MBR = 0000100100000000001100001011000000000010
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001001 MAR = 000000000011 IBR = 00001011000000000010
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ,M(X)
+
+     Transfer Contents of Memory Location X to MQ
+     MBR = 0000000000000000000000000000000000000001 MQ = 0000000000000000000000000000000000000001
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001011 MAR = 000000000010
+     Decoding The Instruction.....
+     The instruction type is MUL M(X) 
+
+     Multiply M(X) by MQ, AC = MSB and MQ = LSB
+     Present Values of Accumalator and MQ,AC =  1000000000000000000000000000000000000110  MQ =  0000000000000000000000000000000000000001
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000000  MQ = 0000000000000000000000000000000000000001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101010 MAR = 001111101010 MBR = 0000101000000000000000100001000000000011
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001010 MAR = 000000000000 IBR = 00100001000000000011
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ
+
+     Transfering Contents of MQ to AC
+     AC = 0000000000000000000000000000000000000001
+
+   ->Fetching The Right-Half.....
+
+     IR = 00100001 MAR = 000000000011
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000001 M(X) = 0000000000000000000000000000000000000001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101011 MAR = 001111101011 MBR = 0000000100000000001000000101000000000001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000001 MAR = 000000000010 IBR = 00000101000000000001
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000001
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000101 MAR = 000000000001
+     Decoding The Instruction.....
+     The instruction type is ADD M(X) 
+
+     Add M(X) to AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000001
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000010
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101100 MAR = 001111101100 MBR = 0010000100000000001000000001000000000000
+
+   ->Fetching The Left-Half.....
+
+     IR = 00100001 MAR = 000000000010 IBR = 00000001000000000000
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000010 M(X) = 0000000000000000000000000000000000000010
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000001 MAR = 000000000000
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101101 MAR = 001111101101 MBR = 0000011000000000001000001111001111101001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000110 MAR = 000000000010 IBR = 00001111001111101001
+     Decoding The Instruction.....
+     The instruction type is SUB M(X) 
+
+     Subtract M(X) from AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000010  M(X) = 0000000000000000000000000000000000000010 AC = 0000000000000000000000000000000000000100
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101001
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101001)
+     Condition Satisfied
+     New Program Counter = 001111101001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101001 MAR = 001111101001 MBR = 0000100100000000001100001011000000000010
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001001 MAR = 000000000011 IBR = 00001011000000000010
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ,M(X)
+
+     Transfer Contents of Memory Location X to MQ
+     MBR = 0000000000000000000000000000000000000001 MQ = 0000000000000000000000000000000000000001
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001011 MAR = 000000000010
+     Decoding The Instruction.....
+     The instruction type is MUL M(X) 
+
+     Multiply M(X) by MQ, AC = MSB and MQ = LSB
+     Present Values of Accumalator and MQ,AC =  0000000000000000000000000000000000000100  MQ =  0000000000000000000000000000000000000001
+     MBR =  0000000000000000000000000000000000000010  M(X) = 0000000000000000000000000000000000000010 AC = 0000000000000000000000000000000000000000  MQ = 0000000000000000000000000000000000000010
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101010 MAR = 001111101010 MBR = 0000101000000000000000100001000000000011
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001010 MAR = 000000000000 IBR = 00100001000000000011
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ
+
+     Transfering Contents of MQ to AC
+     AC = 0000000000000000000000000000000000000010
+
+   ->Fetching The Right-Half.....
+
+     IR = 00100001 MAR = 000000000011
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000010 M(X) = 0000000000000000000000000000000000000010
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101011 MAR = 001111101011 MBR = 0000000100000000001000000101000000000001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000001 MAR = 000000000010 IBR = 00000101000000000001
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000010 AC = 0000000000000000000000000000000000000010
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000101 MAR = 000000000001
+     Decoding The Instruction.....
+     The instruction type is ADD M(X) 
+
+     Add M(X) to AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000010
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000011
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101100 MAR = 001111101100 MBR = 0010000100000000001000000001000000000000
+
+   ->Fetching The Left-Half.....
+
+     IR = 00100001 MAR = 000000000010 IBR = 00000001000000000000
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000011 M(X) = 0000000000000000000000000000000000000011
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000001 MAR = 000000000000
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101101 MAR = 001111101101 MBR = 0000011000000000001000001111001111101001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000110 MAR = 000000000010 IBR = 00001111001111101001
+     Decoding The Instruction.....
+     The instruction type is SUB M(X) 
+
+     Subtract M(X) from AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000011  M(X) = 0000000000000000000000000000000000000011 AC = 0000000000000000000000000000000000000011
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101001
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101001)
+     Condition Satisfied
+     New Program Counter = 001111101001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101001 MAR = 001111101001 MBR = 0000100100000000001100001011000000000010
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001001 MAR = 000000000011 IBR = 00001011000000000010
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ,M(X)
+
+     Transfer Contents of Memory Location X to MQ
+     MBR = 0000000000000000000000000000000000000010 MQ = 0000000000000000000000000000000000000010
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001011 MAR = 000000000010
+     Decoding The Instruction.....
+     The instruction type is MUL M(X) 
+
+     Multiply M(X) by MQ, AC = MSB and MQ = LSB
+     Present Values of Accumalator and MQ,AC =  0000000000000000000000000000000000000011  MQ =  0000000000000000000000000000000000000010
+     MBR =  0000000000000000000000000000000000000011  M(X) = 0000000000000000000000000000000000000011 AC = 0000000000000000000000000000000000000000  MQ = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101010 MAR = 001111101010 MBR = 0000101000000000000000100001000000000011
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001010 MAR = 000000000000 IBR = 00100001000000000011
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ
+
+     Transfering Contents of MQ to AC
+     AC = 0000000000000000000000000000000000000110
+
+   ->Fetching The Right-Half.....
+
+     IR = 00100001 MAR = 000000000011
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000110 M(X) = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101011 MAR = 001111101011 MBR = 0000000100000000001000000101000000000001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000001 MAR = 000000000010 IBR = 00000101000000000001
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000011 AC = 0000000000000000000000000000000000000011
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000101 MAR = 000000000001
+     Decoding The Instruction.....
+     The instruction type is ADD M(X) 
+
+     Add M(X) to AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000011
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000100
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101100 MAR = 001111101100 MBR = 0010000100000000001000000001000000000000
+
+   ->Fetching The Left-Half.....
+
+     IR = 00100001 MAR = 000000000010 IBR = 00000001000000000000
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000100 M(X) = 0000000000000000000000000000000000000100
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000001 MAR = 000000000000
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101101 MAR = 001111101101 MBR = 0000011000000000001000001111001111101001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000110 MAR = 000000000010 IBR = 00001111001111101001
+     Decoding The Instruction.....
+     The instruction type is SUB M(X) 
+
+     Subtract M(X) from AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000100  M(X) = 0000000000000000000000000000000000000100 AC = 0000000000000000000000000000000000000010
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101001
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101001)
+     Condition Satisfied
+     New Program Counter = 001111101001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101001 MAR = 001111101001 MBR = 0000100100000000001100001011000000000010
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001001 MAR = 000000000011 IBR = 00001011000000000010
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ,M(X)
+
+     Transfer Contents of Memory Location X to MQ
+     MBR = 0000000000000000000000000000000000000110 MQ = 0000000000000000000000000000000000000110
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001011 MAR = 000000000010
+     Decoding The Instruction.....
+     The instruction type is MUL M(X) 
+
+     Multiply M(X) by MQ, AC = MSB and MQ = LSB
+     Present Values of Accumalator and MQ,AC =  0000000000000000000000000000000000000010  MQ =  0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000100  M(X) = 0000000000000000000000000000000000000100 AC = 0000000000000000000000000000000000000000  MQ = 0000000000000000000000000000000000011000
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101010 MAR = 001111101010 MBR = 0000101000000000000000100001000000000011
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001010 MAR = 000000000000 IBR = 00100001000000000011
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ
+
+     Transfering Contents of MQ to AC
+     AC = 0000000000000000000000000000000000011000
+
+   ->Fetching The Right-Half.....
+
+     IR = 00100001 MAR = 000000000011
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000011000 M(X) = 0000000000000000000000000000000000011000
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101011 MAR = 001111101011 MBR = 0000000100000000001000000101000000000001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000001 MAR = 000000000010 IBR = 00000101000000000001
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000100 AC = 0000000000000000000000000000000000000100
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000101 MAR = 000000000001
+     Decoding The Instruction.....
+     The instruction type is ADD M(X) 
+
+     Add M(X) to AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000100
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000101
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101100 MAR = 001111101100 MBR = 0010000100000000001000000001000000000000
+
+   ->Fetching The Left-Half.....
+
+     IR = 00100001 MAR = 000000000010 IBR = 00000001000000000000
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000101 M(X) = 0000000000000000000000000000000000000101
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000001 MAR = 000000000000
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101101 MAR = 001111101101 MBR = 0000011000000000001000001111001111101001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000110 MAR = 000000000010 IBR = 00001111001111101001
+     Decoding The Instruction.....
+     The instruction type is SUB M(X) 
+
+     Subtract M(X) from AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000101  M(X) = 0000000000000000000000000000000000000101 AC = 0000000000000000000000000000000000000001
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101001
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101001)
+     Condition Satisfied
+     New Program Counter = 001111101001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101001 MAR = 001111101001 MBR = 0000100100000000001100001011000000000010
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001001 MAR = 000000000011 IBR = 00001011000000000010
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ,M(X)
+
+     Transfer Contents of Memory Location X to MQ
+     MBR = 0000000000000000000000000000000000011000 MQ = 0000000000000000000000000000000000011000
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001011 MAR = 000000000010
+     Decoding The Instruction.....
+     The instruction type is MUL M(X) 
+
+     Multiply M(X) by MQ, AC = MSB and MQ = LSB
+     Present Values of Accumalator and MQ,AC =  0000000000000000000000000000000000000001  MQ =  0000000000000000000000000000000000011000
+     MBR =  0000000000000000000000000000000000000101  M(X) = 0000000000000000000000000000000000000101 AC = 0000000000000000000000000000000000000000  MQ = 0000000000000000000000000000000001111000
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101010 MAR = 001111101010 MBR = 0000101000000000000000100001000000000011
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001010 MAR = 000000000000 IBR = 00100001000000000011
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ
+
+     Transfering Contents of MQ to AC
+     AC = 0000000000000000000000000000000001111000
+
+   ->Fetching The Right-Half.....
+
+     IR = 00100001 MAR = 000000000011
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000001111000 M(X) = 0000000000000000000000000000000001111000
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101011 MAR = 001111101011 MBR = 0000000100000000001000000101000000000001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000001 MAR = 000000000010 IBR = 00000101000000000001
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000101 AC = 0000000000000000000000000000000000000101
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000101 MAR = 000000000001
+     Decoding The Instruction.....
+     The instruction type is ADD M(X) 
+
+     Add M(X) to AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000101
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101100 MAR = 001111101100 MBR = 0010000100000000001000000001000000000000
+
+   ->Fetching The Left-Half.....
+
+     IR = 00100001 MAR = 000000000010 IBR = 00000001000000000000
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000110 M(X) = 0000000000000000000000000000000000000110
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000001 MAR = 000000000000
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101101 MAR = 001111101101 MBR = 0000011000000000001000001111001111101001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000110 MAR = 000000000010 IBR = 00001111001111101001
+     Decoding The Instruction.....
+     The instruction type is SUB M(X) 
+
+     Subtract M(X) from AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000110  M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000000
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101001
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101001)
+     Condition Satisfied
+     New Program Counter = 001111101001
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101001 MAR = 001111101001 MBR = 0000100100000000001100001011000000000010
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001001 MAR = 000000000011 IBR = 00001011000000000010
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ,M(X)
+
+     Transfer Contents of Memory Location X to MQ
+     MBR = 0000000000000000000000000000000001111000 MQ = 0000000000000000000000000000000001111000
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001011 MAR = 000000000010
+     Decoding The Instruction.....
+     The instruction type is MUL M(X) 
+
+     Multiply M(X) by MQ, AC = MSB and MQ = LSB
+     Present Values of Accumalator and MQ,AC =  0000000000000000000000000000000000000000  MQ =  0000000000000000000000000000000001111000
+     MBR =  0000000000000000000000000000000000000110  M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000000  MQ = 0000000000000000000000000000001011010000
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101010 MAR = 001111101010 MBR = 0000101000000000000000100001000000000011
+
+   ->Fetching The Left-Half.....
+
+     IR = 00001010 MAR = 000000000000 IBR = 00100001000000000011
+     Decoding The Instruction.....
+     The instruction type is LOAD MQ
+
+     Transfering Contents of MQ to AC
+     AC = 0000000000000000000000000000001011010000
+
+   ->Fetching The Right-Half.....
+
+     IR = 00100001 MAR = 000000000011
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000001011010000 M(X) = 0000000000000000000000000000001011010000
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101011 MAR = 001111101011 MBR = 0000000100000000001000000101000000000001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000001 MAR = 000000000010 IBR = 00000101000000000001
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000101 MAR = 000000000001
+     Decoding The Instruction.....
+     The instruction type is ADD M(X) 
+
+     Add M(X) to AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000001  M(X) = 0000000000000000000000000000000000000001 AC = 0000000000000000000000000000000000000111
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101100 MAR = 001111101100 MBR = 0010000100000000001000000001000000000000
+
+   ->Fetching The Left-Half.....
+
+     IR = 00100001 MAR = 000000000010 IBR = 00000001000000000000
+     Decoding The Instruction.....
+     The instruction type is STOR M(X) 
+
+     Transfering Contents of Accumalator to Mem(X)
+     MBR = 0000000000000000000000000000000000000111 M(X) = 0000000000000000000000000000000000000111
+
+   ->Fetching The Right-Half.....
+
+     IR = 00000001 MAR = 000000000000
+     Decoding The Instruction.....
+     The instruction type is LOAD M(X) 
+
+     Transfering Contents of Memory Location X to Accumalator
+     M(X) = 0000000000000000000000000000000000000110 AC = 0000000000000000000000000000000000000110
+
+************************************************************************************************************************
+->Fetching The Instruction.....
+  PC = 001111101101 MAR = 001111101101 MBR = 0000011000000000001000001111001111101001
+
+   ->Fetching The Left-Half.....
+
+     IR = 00000110 MAR = 000000000010 IBR = 00001111001111101001
+     Decoding The Instruction.....
+     The instruction type is SUB M(X) 
+
+     Subtract M(X) from AC; put the result in AC
+     Present Value of Accumalator = 0000000000000000000000000000000000000110
+     MBR =  0000000000000000000000000000000000000111  M(X) = 0000000000000000000000000000000000000111 AC = 1000000000000000000000000000000000000001
+
+   ->Fetching The Right-Half.....
+
+     IR = 00001111 MAR = 001111101001
+     Decoding The Instruction.....
+     The instruction type is JUMP + M(X,0:19)
+
+     Checking Conditions For Left Jump to M(001111101001)
+     Condition Not Satisfied
+
+
+Final Answer : 720

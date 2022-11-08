@@ -1,0 +1,135 @@
+To test the code:
+    =>run 'run_this.py'
+    =>Enter the input(i.e a number in 0 to 14)
+    =>It prints the intermediate values of important registers
+    =>The last line is the desired answer(i.e factorial of the input)
+    
+But I recommend running the file like this : 
+    =>python3 run_this.py > <some_filename>.txt
+    =>Enter the number.   
+    =>This creates <some_filename>.txt,which has the ouput.
+    =>Its easier to check the output like this.
+
+
+=>6.txt has the output corresponding to input 6
+=>In the printed ouput M(X) represents the memory location which is accessed for read or write
+
+_______________________________________________________________________________________________________________
+
+                                      PROJECT DESCRIPTION
+
+
+The whole project is divided across seven files:
+            ->run_this.py
+            ->IAS.py
+            ->Data_Transfer.py
+            ->Branch.py
+            ->Arthimetic.py
+            ->Address_Modify.py
+            ->ALU.py
+
+run_this.py:(Run this file to execute the Program)
+
+    ->Contains main-memory and all important registers such as MAR,IR,IBR,MBR..etc
+    ->Highest level of abstraction.It maintains PC.
+    ->For every PC.It implements Fetch Cycle & Decode and Execute Cycle.
+
+IAS.py:
+
+    ->Second Highest level of abstraction.It shows how Fetch Cycle & Decode and Execute Cylce
+      are implemented.
+    ->It doesnt give any information about how an instruction is executed.
+    ->Main memory and Important registers are updated whenever this file is run.
+
+Data_Transfer.py,Branch.py,Arthimetic.py,Address_Modify.py:
+
+    ->Least Level of Abstration.They show how an individual instruction is executed.
+    ->The type of instructions which each file runs is represented by their name.
+
+ALU.py:
+    ->Implements all the operations an ALU is expected to to do.
+
+
+Varaibles used in the project:
+
+    Important Registers:
+                ->MAR - Memory Address Register       (12 characters long binary string)
+                ->MBR - Memory Buffer Register        (40 characters long binary string)
+                ->IR  - Instruction Register          (08 characters long binary string)
+                ->IBR - Instruction Buffer Register   (20 characters long binary string)
+                ->AC  - Accumalator                   (40 characters long binary string)
+                ->MQ  - Multiplier/Quotient           (40 characters long binary string)
+                ->PC  - Program Counter               (12 characters long binary string)
+    
+    Main_memory :
+               ->It represents Memory of IAS.
+               -> Addresses in range 0-999 are to store data.
+               -> Addresses in range 1000-4095 are to instructions.
+               -> All data is intialised to 40 characters long '0' string.
+               -> All instructions are intialised to empty strings.
+    
+    Note * Memory is organised and intialised in this manner to make debugging easier.There are no such
+           restructions is in IAS organisation.
+
+    Important Control signals:
+               ->MAX   -  It holds the address of the memory location just outside out stack.
+               ->Left  -  Its a flag variable which decides when to execute left instruction.
+               ->Jump  -  Its a flag which decides when to jump.
+
+    decode_dict and execute_dict :
+                ->Contains direct mapping to opcodes and corresponding dictionary.
+
+
+->Simple Program to find factorial of any number between 0-14 is implemented.
+->Memory organisation:
+            Important data fields:
+
+                    M(0) = n -> input
+                    M(1) = 1 ->constant
+                    M(2) = 1 -> a
+                    M(3) = 1 -> b
+
+            Assembly Language code:
+
+                    LOAD -M(0)             JUMP + M(1006,0:19)      ->M(1000)
+                    LOAD MQ M(3)           MUL M(2)    	            ->M(1001)  
+                    LOAD MQ                STOR M(3)   	            ->M(1002)
+                    LOAD M(2)              ADD M(1)    	            ->M(1003)
+                    STOR M(2)              LOAD M(0)   	            ->M(1004)
+                    SUB  M(2)              JUMP +M(1001,0:19)       ->M(1005)
+
+            Assembly code in binary :
+
+                    op-code     Address	    op-code     Address
+                    00000010  000000000000	00001111  001111101110	->M(1000)	
+                    00001001  000000000011	00001011  000000000010  ->M(1001)
+                    00001010  000000000000	00100001  000000000011	->M(1002)
+                    00000001  000000000010	00000101  000000000001  ->M(1003)
+                    00100001  000000000010	00000001  000000000000  ->M(1004)
+                    00000110  000000000010	00001111  001111101001  ->M(1005)
+
+            Code in C lang:
+
+                    n = stdin;
+                    a = 1;
+                    b = 1;
+
+                    if(n>=0)
+                    {
+                        while (a<=n) 
+                        {
+                            b = b*a;
+                            a = a+1;
+                        }
+                    }
+
+    Note* This method is only applicable for numbers below 14.From 15! we would need a get a number
+          more than 40 bits long.Then result of multiplication which is present in the 
+          Accumalator wuold also come into picture,which is hard to handle.
+
+
+
+
+
+
+
